@@ -16,12 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/rest', ResetController::class, 'reset');
+Route::post('/rest', [ResetController::class, 'reset']);
 
-Route::get('/balance', BalanceController::class, 'show');
+Route::get('/balance', [BalanceController::class, 'show']);
 
-Route::post('/event', BalanceController::class, 'store');
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/event', [BalanceController::class, 'store']);
