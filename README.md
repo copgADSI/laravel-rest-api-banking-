@@ -21,15 +21,23 @@
 POST / EVENT {"type:"withdraw,"origin":100,"amount":5}
 404 0
 
+---
+
 5. WITHDRAW FROM EXISTING ACCOUNT
+
+---
 
 POST / EVENT {"type":widthdraw,"origin":100,"amount":5}
 201 {"origin":{"id":100,"balance"15}}
+
+---
 
 6. TRANSFER EXISTING ACCOUNT
 
 POST / EVENT {"type":"widthdraw,"origin":100,"amount":15,"destination":300}
 201 {"origin": {"id":100,"balance":0, } "destination":{"id":300,"balance":15} }
+
+---
 
 7. TRANSFER NON EXISTING ACCOUNT
    POST / EVENT {"type":"widthdraw,"origin":1100,"amount":15,"destination":3300}
